@@ -8,7 +8,7 @@ body{
 .icon_user{
     width: 200px;
     height: 200px;
-    background-image: url("/pictures/snow_home.jpg");
+    background-image: url("picturee/snow_home.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
