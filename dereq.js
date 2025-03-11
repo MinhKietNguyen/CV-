@@ -49,6 +49,7 @@ document.addEventListener("click", function (event) {
             chatBox.prepend(message);
             input.value = "";
         }
+        
         alert("Gửi mail thành công")
     }
 });
