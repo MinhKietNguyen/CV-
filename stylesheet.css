@@ -14,3 +14,64 @@ body{
     background-repeat: no-repeat;
     border-radius: 10px;
 }
+.chat-container {
+    width: 318px;
+    height: 169px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: -72%;
+    background-color: wheat;
+    border-bottom-left-radius:30px;
+}
+.chat-box {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse; /* Đảo ngược thứ tự tin nhắn */
+    gap: 10px;
+}
+.chat-message {
+    background: linear-gradient(45deg, hsla(30, 70%, 50%, 1),hsla(0, 0%, 100%, 0.3));
+    color: white;
+    padding: 8px 12px;
+    border-radius: 15px;
+    max-width: 80%;
+    align-self: flex-end;
+}
+.input-area {
+    display: flex;
+    padding: 10px;
+    background: #f8f8f8;
+    width: 288px;
+    margin-left: 5px;
+    height: 30px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 24px;
+    border-top: 1px solid orange;
+}
+.input-area textarea {
+    flex: 1;
+    height: 40px;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    resize: none;
+    outline: none;
+    border-bottom-left-radius: 45px;
+}
+.input-area button {
+    margin-left: 10px;
+    padding: 10px;
+    border: none;
+    background: hsla(30, 70%, 50%, 1);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.input-area button:hover {
+    background: linear-gradient( hsla(30, 70%, 50%, 1),hsla(0, 0%, 100%, 0.3));
+}
