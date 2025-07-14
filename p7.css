@@ -1,0 +1,78 @@
+table{
+    padding: 10px;
+}
+.fa-edit { color: #007bff; cursor: pointer; }
+.fa-trash { color: #dc3545; cursor: pointer; }
+
+#updateform{
+    width: 100px;
+    height: 300px;
+    background-color: black;
+}
+
+.edit-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    padding: 8px 15px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:first-of-type {
+    background: #4CAF50;
+    color: white;
+}
+
+button:last-of-type {
+    background: #f44336;
+    color: white;
+}
+.tab {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #eee;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.tab.active {
+    background-color: #ccc;
+    font-weight: bold;
+}
+.form-content {
+    display: none;
+    margin-top: 20px;
+}
+.form-content.active {
+    display: block;
+}
+
+

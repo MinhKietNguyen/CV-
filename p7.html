@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .action-icons {
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="p7.css">
+</head>
+<body>
+    <div style="display: flex;gap:20px"> 
+        <h2 class="tab active" data-tab="nsx" onclick="NSX()" style="border:1px solid black; padding: 10px 15px">Danh sách Nhà Sản Xuất</h2>
+        <h2 class="tab" data-tab="sp" onclick="SP()" style="border:1px solid black; padding: 10px 15px">Danh sách Sản phẩm</h2>
+        <h2 class="tab" data-tab="pc" onclick="PC()" style="border:1px solid black; padding: 10px 15px">Danh sách PC</h2>
+        <h2 class="tab" data-tab="laptop" onclick="Laptop()" style="border:1px solid black; padding: 10px 15px">Danh sách Laptop</h2>
+    </div>
+    <div id="NSXTab">
+        <table border="1" style="width: 28%;">
+            <thead>
+                <tr>
+                    <th>Mã NSX</th>
+                    <th>Tên NSX</th>
+                    <th>Địa chỉ</th>
+                    <th>Sửa</th>
+                    <th>Xóa</th>
+                </tr>
+            </thead>
+            <tbody id="NSX">
+            </tbody>
+        </table>
+        <button style=" padding: 10px 15px;margin-top: 10px;" onclick="OpenAddNSX()">Thêm</button>
+        <div id="nsx-form" class="form-content active" style="display: none;">
+            <form id="form-nsx">
+                <label>Mã NSX: <input type="text" name="MaNSX" ></label><br>
+                <label>Tên NSX: <input type="text" name="TenNSX" ></label><br>
+                <label>Địa chỉ: <input type="text" name="DiaChi" ></label><br>
+                <button type="submit">Lưu NSX</button>
+                <button onclick="CloseAddNSX()">Close</button>
+            </form>
+        </div>
+    </div>
+    <div id="SPTab" style="display: none;width: 22%;">
+        <table border="1" >
+            <thead>
+                <tr>
+                    <th>Mã NSX</th>
+                    <th>Mã SP</th>
+                    <th>Category</th>
+                    <th>Sửa</th>
+                    <th>Xóa</th>
+                </tr>
+            </thead>
+            <tbody id="SP">
+            </tbody>
+        </table>
+        <button style=" padding: 10px 15px;margin-top: 10px;" onclick="OpenAddSP()">Thêm</button>
+        <div id="sp-form" class="form-content" style="display: none;">
+            <form id="form-sp">
+                <label>Mã NSX: <input type="text" name="MaNSX" ></label><br>
+                <label>Mã SP: <input type="text" name="MaSP" ></label><br>
+                <label>Category: <input type="text" name="Loai" ></label><br>
+                <button type="submit">Lưu SP</button>
+                <button onclick="CloseAddSP()">Close</button>
+            </form>
+        </div>
+    </div>
+    <div id="PCTab" style="display: none;width: 36%;">
+        <table border="1" >
+            <thead>
+                <tr>
+                    <th>Mã SP-P</th>
+                    <th>CPU</th>
+                    <th>RAM</th>
+                    <th>HD</th>
+                    <th>Price</th>
+                    <th>Sửa</th>
+                    <th>Xóa</th>
+                </tr>
+            </thead>
+            <tbody id="PC">
+            </tbody>
+        </table>
+        <button style="padding: 10px 15px; margin-top: 10px;" onclick="OpenAddPC()">Thêm</button>
+        <div class="form-content" id="pc-form" style="border: 1px solid black; border-radius: 20px; background-color: wheat; display: none; position: absolute; margin-left: 80px; margin-top: -27%; width: 300px; height: 300px;">
+            <form id="form-pc" style="display: flex; flex-direction: column; padding: 10px 15px;">
+                <label for="info_maSPP">Mã SP-P</label>
+                <input id="info_maSPP" name="MaSP" type="text" >
+    
+                <label for="info_CPU">CPU</label>
+                <input id="info_CPU" name="CPU" type="text" >
+    
+                <label for="info_RAM">RAM</label>
+                <input id="info_RAM" name="RAM" type="text" >
+    
+                <label for="info_HD">Hard Disk</label>
+                <input id="info_HD" name="HD" type="text" >
+    
+                <label for="info_price">Price</label>
+                <input id="info_price" name="gia" type="number" >
+    
+                <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                    <button type="button" onclick="CloseAddPC()">Đóng</button>
+                    <button type="submit">Thêm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="LaptopTab" style="display: none;width: 40%;">
+        <table border="1" >
+            <thead>
+                <tr>
+                    <th>Mã SP-L</th>
+                    <th>CPU</th>
+                    <th>RAM</th>
+                    <th>HD</th>
+                    <th>Screen</th>
+                    <th>Price</th>
+                    <th>Sửa</th>
+                    <th>Xóa</th>
+                </tr>
+            </thead>
+            <tbody id="Laptop">
+            </tbody>
+        </table>
+        <button style=" padding: 10px 15px;margin-top: 10px;" onclick="OpenAddLaptop()">Thêm</button>
+        <div id="laptop-form" class="form-content" style="display: none;">
+            <form id="form-laptop">
+                <label>Mã SP: <input type="text" name="MaSP"></label><br>
+                <label>CPU: <input type="text" name="CPU"></label><br>
+                <label>RAM: <input type="text" name="RAM"></label><br>
+                <label>HD: <input type="text" name="HD"></label><br>
+                <label>Screen: <input type="text" name="ManHinh"></label><br>
+                <label>Price: <input type="number" name="gia"></label><br>
+                <button type="submit">Lưu Laptop</button>
+                <button onclick="CloseAddLaptop()">Close</button>
+            </form>
+        </div>
+    </div>
+    <form>
+    </form>
+    <script>
+        function fetchAndRenderTable(apiUrl, tableId, columns) {
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    let table = document.getElementById(tableId);
+                    data.forEach(item => {
+                        let row = table.insertRow();
+                        columns.forEach(col => {
+                        row.insertCell().innerText = item[col] || "";
+                    });
+
+                    let editCell = row.insertCell();
+                    editCell.classList.add("action-icons");
+                    editCell.innerHTML = `<i class="fas fa-edit" data-table="${tableId}"></i>`;
+
+                    let deleteCell = row.insertCell();
+                    deleteCell.classList.add("action-icons");
+                    deleteCell.innerHTML = `<i class="fas fa-trash" data-table="${tableId}"></i>`;
+                });
+            })
+            .catch(error => console.error(`Lỗi tải dữ liệu từ ${apiUrl}:`, error));
+        }
+        fetchAndRenderTable('http://localhost:4000/nsx', 'NSX', ['MaNSX', 'TenNSX', 'DiaChi']);
+        fetchAndRenderTable('http://localhost:4000/sp', 'SP', ['MaNSX', 'MaSP', 'Loai']);
+        fetchAndRenderTable('http://localhost:4000/pc', 'PC', ['MaSP', 'CPU', 'RAM', 'HD', 'gia']);
+        fetchAndRenderTable('http://localhost:4000/laptop', 'Laptop', ['MaSP', 'CPU', 'RAM', 'HD', 'ManHinh', 'gia']);
+    </script>
+    <script src="p7.js"></script>
+</body>
+</html>
